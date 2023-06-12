@@ -31,8 +31,8 @@ login
     Wait Until Page Contains Element    dt_login_button
     Click Element    dt_login_button
     Wait Until Page Contains Element    txtEmail
-    Input Text    txtEmail    jiawei@besquare.com.my
-    Input Password    txtPass    Jiawei@12345
+    Input Text    txtEmail    XXXXX
+    Input Password    txtPass    XXXX
     Click Element    //button[@name="login"]
 
 check is it real account
