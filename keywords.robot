@@ -29,8 +29,8 @@ Login Account
     Wait Until Page Contains Element    dt_login_button
     Click Element    dt_login_button
     Wait Until Page Contains Element    txtEmail
-    Input Text    txtEmail    XXXX
-    Input Password    txtPass    XXXX
+    Input Text    txtEmail    XXX
+    Input Password    txtPass    XXX
     Click Element    //button[@name="login"]
     Wait Until Page Contains Element    ${deposit_btn}    10
     Click Element    dropdown-display
@@ -120,5 +120,10 @@ Check Token Created Without Admin
     Wait Until Element Is Visible    ${token_name_without_admin}
     Wait Until Element Is Visible    ${read_scope}
     Wait Until Element Is Visible    ${payments_scope}
+    Click Element    ${delete_btn}
+    Wait Until Element Is Visible    ${delete_confirm_btn}    10
+    Click Element    ${delete_confirm_btn}
+    Wait Until Element Is Not Visible    ${token_name_without_admin}    10
+
 
 

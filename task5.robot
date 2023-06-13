@@ -23,8 +23,8 @@ login
     Wait Until Page Contains Element    dt_login_button
     Click Element    dt_login_button
     Wait Until Page Contains Element    txtEmail
-    Input Text    txtEmail    XXXX
-    Input Password    txtPass    XXXX
+    Input Text    txtEmail    XXXXX
+    Input Password    txtPass    XXXXX
     Click Element    //button[@name="login"]
 
 check is it real account
@@ -79,10 +79,20 @@ deal cancellation stake fee
     Wait Until Element Is Not Visible    //label[@for="dc_take_profit-checkbox_input"]//span[@class="dc-checkbox__box dc-checkbox__box--active"]
     Wait Until Element Is Not Visible    //label[@for="dc_stop_loss-checkbox_input"]//span[@class="dc-checkbox__box dc-checkbox__box--active"]
     Click Element    //input[@id="dt_amount_input"]
+    Clear Input Field    //input[@id="dt_amount_input"]
+    Click Element    //input[@id="dt_amount_input"]
     Input Text    //input[@id="dt_amount_input"]    100
-    ${element_text}=    Get Text    xpath=//span[@data-testid="dt_span"]
-    ${value}=    Get Substring    ${element_text}    0    -3
-    Should Be True    ${value} > 100
+    Wait Until Element Is Visible    (//span[@data-testid="dt_span"])[9]
+    ${first_value}    Get Text    (//span[@class="trade-container__price-info-currency"])
+    ${value_1}    Set Variable    ${first_value[:-4]}
+    Click Element    //input[@id="dt_amount_input"]
+    Clear Input Field    //input[@id="dt_amount_input"]
+    Click Element    //input[@id="dt_amount_input"]
+    Input Text    //input[@id="dt_amount_input"]    200
+    Wait Until Element Is Visible    (//span[@data-testid="dt_span"])[9]
+    ${second_value}    Get Text    (//span[@class="trade-container__price-info-currency"])
+    ${value_2}    Set Variable    ${second_value[:-4]}
+    Should Be True    ${value_2} > ${value_1}
 
 max-min stake
     Click Element    //input[@id="dt_amount_input"]
