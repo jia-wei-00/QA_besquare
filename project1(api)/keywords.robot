@@ -29,8 +29,8 @@ Login Account
     Wait Until Page Contains Element    dt_login_button
     Click Element    dt_login_button
     Wait Until Page Contains Element    txtEmail
-    Input Text    txtEmail    XXX
-    Input Password    txtPass    XXX
+    Input Text    txtEmail    XXXX
+    Input Password    txtPass    XXXX
     Click Element    //button[@name="login"]
     Wait Until Page Contains Element    ${deposit_btn}    10
     Click Element    dropdown-display
